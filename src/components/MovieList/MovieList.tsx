@@ -40,8 +40,6 @@ const MovieList = ({ type, title }: MovieType) => {
     setfilteredMovies(data.results);
   };
 
-  console.log(movies);
-
   const handleFilter = (rate: number) => {
     if (minRating === rate) {
       // check if user click the tag twice
@@ -80,7 +78,7 @@ const MovieList = ({ type, title }: MovieType) => {
   };
 
   return (
-    <section className="movie-list" id={type}>
+    <section className="movie-list">
       <header className="movie-list__header">
         <h2 className="movie-list__heading">{title}</h2>
         <div className="movie-list__fs">

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import "./NavBar.css";
 import DarkMode from "../DarkMode/DarkMode";
+import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [isActive, setIsActive] = useState(true);
@@ -12,7 +14,7 @@ const NavBar = () => {
   return (
     <nav className={`navbar  ${isActive ? "collapsible--expanded" : ""}`}>
       <h1 className="brand-name">
-        <a href="">MovieManiac</a>
+        <Link to="/popular">MovieManiac</Link>
       </h1>
 
       <span className="icon-container" onClick={handleClick}>
@@ -43,13 +45,13 @@ const NavBar = () => {
       <ul className="collapsible__content nav__list">
         <DarkMode />
         <li className="list__item">
-          <a href="#upcoming">Latest 🥳</a>
+          <NavLink to="/latest">Latest 🥳</NavLink>
         </li>
         <li className="list__item">
-          <a href="#popular">Popular 🔥</a>
+          <NavLink to="/popular">Popular 🔥</NavLink>
         </li>
         <li className="list__item">
-          <a href="#top_rated">Top Rated ⭐</a>
+          <NavLink to="/top_rated">Top Rated ⭐</NavLink>
         </li>
       </ul>
     </nav>
