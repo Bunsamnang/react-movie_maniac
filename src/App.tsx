@@ -1,4 +1,4 @@
-import { Route, Routes, Navigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import "./App.css";
 import MovieList from "./components/MovieList/MovieList";
@@ -11,10 +11,8 @@ const App = () => {
 
       <main>
         <Routes>
-          <Route path="/" element={<Navigate to={"/popular"} replace />} />
-
           <Route
-            path="/popular"
+            path="/"
             element={<MovieList type={"popular"} title={"Popular 🔥"} />}
           />
           <Route

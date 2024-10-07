@@ -14,7 +14,7 @@ const NavBar = () => {
   return (
     <nav className={`navbar  ${isActive ? "collapsible--expanded" : ""}`}>
       <h1 className="brand-name">
-        <Link to="/popular">MovieManiac</Link>
+        <Link to="/">MovieManiac</Link>
       </h1>
 
       <span className="icon-container" onClick={handleClick}>
@@ -48,7 +48,7 @@ const NavBar = () => {
           <NavLink to="/latest">Latest 🥳</NavLink>
         </li>
         <li className="list__item">
-          <NavLink to="/popular">Popular 🔥</NavLink>
+          <NavLink to="/">Popular 🔥</NavLink>
         </li>
         <li className="list__item">
           <NavLink to="/top_rated">Top Rated ⭐</NavLink>
