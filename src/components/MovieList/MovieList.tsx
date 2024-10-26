@@ -38,6 +38,7 @@ const MovieList = ({ type, title }: MovieType) => {
     const data = await response.json();
     setMovies(data.results);
     setfilteredMovies(data.results);
+    console.log(data.results);
   };
 
   const handleFilter = (rate: number) => {
