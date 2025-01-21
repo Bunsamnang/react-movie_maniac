@@ -23,6 +23,8 @@ const App = () => {
             path="/top_rated"
             element={<MovieList type={"top_rated"} title={"Top Rated ⭐"} />}
           />
+
+          <Route path="*" element={<div>Page Not Found</div>} />
         </Routes>
       </main>
     </div>

@@ -28,18 +28,17 @@ const MovieList = ({ type, title }: MovieType) => {
   const [minRating, setMinRating] = useState(0);
 
   useEffect(() => {
+    const fetchMovies = async () => {
+      const response = await fetch(
+        `https://api.themoviedb.org/3/movie/${type}?api_key=e861f02026cd129cf14d67a498015126`
+      );
+      const data = await response.json();
+      setMovies(data.results);
+      setfilteredMovies(data.results);
+      console.log(data.results);
+    };
     fetchMovies();
   }, [type]);
-
-  const fetchMovies = async () => {
-    const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${type}?api_key=e861f02026cd129cf14d67a498015126`
-    );
-    const data = await response.json();
-    setMovies(data.results);
-    setfilteredMovies(data.results);
-    console.log(data.results);
-  };
 
   const handleFilter = (rate: number) => {
     if (minRating === rate) {
@@ -68,7 +67,7 @@ const MovieList = ({ type, title }: MovieType) => {
     } else {
       setfilteredMovies(movies);
     }
-  }, [sort]);
+  }, [sort, filteredMovies, movies]);
 
   const handleSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;

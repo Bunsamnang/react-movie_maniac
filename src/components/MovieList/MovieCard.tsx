@@ -22,6 +22,7 @@ const MovieCard = ({
   return (
     <a
       href={`https://www.themoviedb.org//movie/${movie_id}`}
+      target="_blank"
       className="movie-card"
     >
       <img src={imageUrl} alt="movie poster" className="movie-poster" />
